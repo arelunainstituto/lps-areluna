@@ -2,24 +2,16 @@
   "name": "areluna-landing-pages",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "14.2.5",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "@types/node": "^20.14.10",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.39",
-    "tailwindcss": "^3.4.6",
-    "typescript": "^5.5.3"
+    "dev:pt": "npm run dev -w @areluna/pt",
+    "dev:br": "npm run dev -w @areluna/br",
+    "build:pt": "npm run build -w @areluna/pt",
+    "build:br": "npm run build -w @areluna/br",
+    "build": "npm run build:pt && npm run build:br",
+    "lint": "npm run lint --workspaces --if-present"
   }
 }
