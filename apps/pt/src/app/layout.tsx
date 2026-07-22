@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
+import { GoogleTagManager } from "@areluna/core";
 import "@areluna/core/styles.css";
 
 const cormorant = Cormorant_Garamond({
@@ -30,7 +31,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-PT" className={`${cormorant.variable} ${jost.variable}`}>
-      <body>{children}</body>
+      <body>
+        <GoogleTagManager />
+        {children}
+      </body>
     </html>
   );
 }
