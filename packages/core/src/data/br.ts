@@ -617,7 +617,7 @@ const botox: Procedure = {
     "/img/cases/toxina/regiao-dos-olhos.jpg",
     "/img/cases/toxina/olhar-descansado.png",
   ],
-  gallerySplit: ["v", "h", "v"],
+  gallerySplit: ["v", "v", "v"],
 
   proTitle: "Quem realiza a sua aplicação",
   proIntro:
