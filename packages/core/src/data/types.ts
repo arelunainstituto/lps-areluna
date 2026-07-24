@@ -114,6 +114,10 @@ export interface Procedure {
   gallerySub: string;
   galleryCaptions: string[];
   galleryImages?: string[]; // fotos reais (antes/depois já compostos). Sem isto, usa placeholder.
+  // Orientação do split antes/depois por imagem (paralelo a galleryImages):
+  // "v" = antes à esquerda / depois à direita; "h" = antes em cima / depois embaixo.
+  // Quando presente, sobrepõe o rótulo ANTES/DEPOIS na foto real.
+  gallerySplit?: ("v" | "h")[];
   // Professionals
   proTitle: string;
   proIntro: string;
@@ -121,6 +125,7 @@ export interface Procedure {
   // Testimonials
   testimonialsTitle: string;
   testimonials: Testimonial[];
+  testimonialsCta?: string; // texto do botão na dobra de depoimentos (default: formCta)
   // FAQ
   faq: Faq[];
   // Final CTA

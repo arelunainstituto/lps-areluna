@@ -51,7 +51,7 @@ export default function Testimonials({ p }: { p: Procedure }) {
 
         <Reveal className="mt-14 flex justify-center">
           <a href="#form" className="btn-gold">
-            {p.formCta}
+            {p.testimonialsCta ?? p.formCta}
           </a>
         </Reveal>
       </div>

@@ -6,6 +6,7 @@ import { Plus } from "./icons";
 
 export default function Faq({ p }: { p: Procedure }) {
   const [open, setOpen] = useState<number | null>(0);
+  const isBr = p.unit === "br";
 
   return (
     <section className="bg-marble-light py-24 text-jet md:py-32">
@@ -16,14 +17,15 @@ export default function Faq({ p }: { p: Procedure }) {
             <span className="eyebrow !text-gold-deep">Dúvidas frequentes</span>
           </div>
           <h2 className="display text-4xl text-jet md:text-5xl">
-            Tudo o que precisa de saber
+            {isBr ? "Tudo o que você precisa saber" : "Tudo o que precisa de saber"}
           </h2>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-jet/60">
-            Não encontrou a sua resposta? A nossa equipa esclarece tudo na
-            avaliação, sem compromisso.
+            {isBr
+              ? "Não encontrou sua resposta? Nossa equipe esclarece tudo na consulta, sem compromisso."
+              : "Não encontrou a sua resposta? A nossa equipa esclarece tudo na avaliação, sem compromisso."}
           </p>
           <a href="#form" className="btn-gold mt-8">
-            Marcar avaliação
+            {isBr ? "Marcar consulta" : "Marcar avaliação"}
           </a>
         </div>
 

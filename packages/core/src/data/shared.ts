@@ -30,10 +30,10 @@ export const BR_CONTACT = {
   whatsappHref: "https://wa.me/554131637004",
   address: "Curitiba — Paraná, Brasil",
   regulatory: [
-    "Responsável técnica inscrita no CRO-PR",
+    "Responsável técnica inscrita no CRBM-PR",
     "Procedimentos realizados por profissionais habilitados",
     "Resultados variam conforme avaliação individual",
-    "Publicidade em conformidade com o Código de Ética Odontológica",
+    "Publicidade em conformidade com o Código de Ética Odontológica e Biomédica",
   ],
 };
 

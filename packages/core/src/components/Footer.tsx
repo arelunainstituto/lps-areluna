@@ -2,7 +2,15 @@ import Image from "next/image";
 import type { Procedure } from "../data/types";
 import { Phone, WhatsApp } from "./icons";
 
+const digits = (s: string) => s.replace(/\D/g, "");
+
 export default function Footer({ p }: { p: Procedure }) {
+  const isBr = p.unit === "br";
+  // Telefone e WhatsApp são o mesmo número (caso BR): junta numa linha só,
+  // com os dois ícones, e o número aponta para o WhatsApp.
+  const phoneIsWhatsapp =
+    !!p.whatsappHref && !!p.phoneHref && digits(p.phoneHref) === digits(p.whatsappHref);
+
   return (
     <footer className="border-t border-gold-leaf/15 bg-abyssal py-16">
       <div className="container-x section grid gap-10 md:grid-cols-[1.2fr_1fr_1fr]">
@@ -22,34 +30,51 @@ export default function Footer({ p }: { p: Procedure }) {
         </div>
 
         <div>
-          <h4 className="eyebrow mb-4">Contacto</h4>
-          {p.phoneDisplay && (
-            <a
-              href={p.phoneHref}
-              className="flex items-center gap-2 text-sm text-sand/75 transition hover:text-gold-pale"
-            >
-              <Phone className="h-4 w-4 text-gold-leaf" />
-              {p.phoneDisplay}
-            </a>
-          )}
-          {p.whatsappHref ? (
+          <h4 className="eyebrow mb-4">{isBr ? "Contato" : "Contacto"}</h4>
+          {phoneIsWhatsapp ? (
             <a
               href={p.whatsappHref}
               target="_blank"
               rel="noreferrer"
-              className="mt-3 flex items-center gap-2 text-sm text-sand/75 transition hover:text-gold-pale"
+              className="flex items-center gap-2 text-sm text-sand/75 transition hover:text-gold-pale"
             >
-              <WhatsApp className="h-4 w-4 text-gold-leaf" />
-              WhatsApp
+              <span className="flex items-center gap-1 text-gold-leaf">
+                <Phone className="h-4 w-4" />
+                <WhatsApp className="h-4 w-4" />
+              </span>
+              {p.phoneDisplay}
             </a>
           ) : (
-            <a
-              href="#form"
-              className="mt-3 flex items-center gap-2 text-sm text-sand/75 transition hover:text-gold-pale"
-            >
-              <WhatsApp className="h-4 w-4 text-gold-leaf" />
-              Marcar pelo formulário
-            </a>
+            <>
+              {p.phoneDisplay && (
+                <a
+                  href={p.phoneHref}
+                  className="flex items-center gap-2 text-sm text-sand/75 transition hover:text-gold-pale"
+                >
+                  <Phone className="h-4 w-4 text-gold-leaf" />
+                  {p.phoneDisplay}
+                </a>
+              )}
+              {p.whatsappHref ? (
+                <a
+                  href={p.whatsappHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-3 flex items-center gap-2 text-sm text-sand/75 transition hover:text-gold-pale"
+                >
+                  <WhatsApp className="h-4 w-4 text-gold-leaf" />
+                  WhatsApp
+                </a>
+              ) : (
+                <a
+                  href="#form"
+                  className="mt-3 flex items-center gap-2 text-sm text-sand/75 transition hover:text-gold-pale"
+                >
+                  <WhatsApp className="h-4 w-4 text-gold-leaf" />
+                  Marcar pelo formulário
+                </a>
+              )}
+            </>
           )}
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-sand/55">
             {p.address}

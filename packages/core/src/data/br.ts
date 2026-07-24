@@ -5,15 +5,15 @@ import { BR_CONTACT, PROS, PROOF } from "./shared";
 // padrão europeu REAL — única em Curitiba com unidade própria em Portugal.
 const INSTITUTO_MECHANISM = {
   eyebrow: "O nosso diferencial",
-  title: "Padrão europeu de verdade. Não é slogan — é um endereço no Porto.",
-  body: "Em Curitiba, muita gente promete 'padrão europeu'. A Areluna é a única que tem, de facto, uma unidade a operar em Portugal — os mesmos protocolos, a mesma equipa, a mesma exigência. Não somos mais um nome no feed: somos um instituto, com responsabilidade clínica e uma fundadora com dupla titulação Brasil e Portugal.",
+  title: "Padrão europeu de verdade. Não é slogan — são 3 clínicas em Portugal.",
+  body: "Em Curitiba, muita gente promete 'padrão europeu'. A Areluna é a única que tem, de fato, unidades operando em Portugal — os mesmos protocolos, a mesma equipe, a mesma exigência. Não somos mais um nome no feed: somos um instituto, com responsabilidade clínica e uma fundadora com dupla titulação Brasil e Portugal.",
   enemyLine:
     "A diferença entre um procedimento feito por um perfil que viraliza — e um plano pensado por um instituto que responde por você depois.",
   points: [
-    { title: "Instituto, não influencer", body: "Equipa e responsabilidade clínica, não a agenda lotada de um nome do momento." },
-    { title: "Unidade real em Portugal", body: "Padrão europeu comprovável: a matriz opera no Porto, com os mesmos protocolos." },
+    { title: "Técnica, não marketing", body: "Equipe e responsabilidade clínica, não a agenda lotada de um nome do momento." },
+    { title: "Unidades reais em Portugal", body: "Padrão europeu comprovável: a matriz opera no Porto, com os mesmos protocolos." },
     { title: "Dupla titulação BR + PT", body: "Fundadora Dra. Arethuza Luna, formada e atuante nos dois países." },
-    { title: "Avaliação antes da agulha", body: "Estudamos o seu rosto e indicamos só o que faz sentido. Sem empurrar procedimento." },
+    { title: "Consulta antes da agulha", body: "Estudamos o seu rosto e indicamos só o que faz sentido. Sem empurrar procedimento." },
   ],
 };
 
@@ -60,15 +60,15 @@ const harmonizacao: Procedure = {
     "Equipe especializada",
   ],
 
-  formTitle: "Avaliação personalizada",
+  formTitle: "Consulta de avaliação",
   formSubtitle:
     "Um plano pensado para o seu rosto, com indicação dos procedimentos certos para os seus objetivos.",
-  formCta: "Quero minha avaliação",
+  formCta: "Quero minha consulta",
   formFields,
   formFootnote:
     "Seus dados são tratados com total confidencialidade. Sem custo e sem compromisso.",
-  offerName: "Avaliação facial completa + plano individualizado",
-  urgency: "Agenda de avaliações limitada este mês",
+  offerName: "Mapeamento facial completo + plano individualizado",
+  urgency: "Agenda de consultas limitada este mês",
   proof: PROOF,
   mechanism: INSTITUTO_MECHANISM,
 
@@ -80,7 +80,7 @@ const harmonizacao: Procedure = {
   ],
 
   diffEyebrow: "Por que Areluna",
-  diffTitle: "Um instituto. Não mais um nome no feed.",
+  diffTitle: "Um instituto. Não só mais um nome no feed.",
   diffIntro:
     "A harmonização que valoriza você é a que ninguém percebe — apenas notam que está diferente, melhor. Trazemos o padrão europeu de naturalidade para Curitiba, com avaliação séria e mãos especializadas.",
   benefits: [
@@ -97,7 +97,7 @@ const harmonizacao: Procedure = {
       body: "Estudamos a sua face, os seus objetivos e a sua história. O plano vem primeiro; o procedimento, depois.",
     },
     {
-      title: "Equipe, não influencer",
+      title: "Equipe Técnica, não influencer",
       body: "Profissionais habilitados e dedicados ao seu resultado — com a segurança de um instituto, não o improviso de uma agenda lotada.",
     },
     {
@@ -133,6 +133,12 @@ const harmonizacao: Procedure = {
   galleryTitle: "Resultados naturais",
   gallerySub: "Pacientes do Instituto Areluna que escolheram realçar — não transformar.",
   galleryCaptions: ["Contorno e proporção", "Olhar descansado", "Harmonia natural"],
+  galleryImages: [
+    "/img/cases/harmonizacao/contorno-e-proporcao.png",
+    "/img/cases/harmonizacao/olhar-descansado.png",
+    "/img/cases/harmonizacao/harmonia-natural.jpg",
+  ],
+  gallerySplit: ["v", "v", "v"],
 
   proTitle: "Quem cuida do seu rosto",
   proIntro:
@@ -183,7 +189,7 @@ const harmonizacao: Procedure = {
 
   finalTitle: "A sua melhor versão já é você. Só precisa de equilíbrio.",
   finalSub: "Agende a sua avaliação personalizada e descubra o plano certo para o seu rosto.",
-  finalCta: "Quero minha avaliação",
+  finalCta: "Quero minha consulta",
   ...baseContact,
 };
 
@@ -209,15 +215,15 @@ const rinomodelacao: Procedure = {
     "Proporcional ao seu rosto",
   ],
 
-  formTitle: "Avaliação de rinomodelação",
+  formTitle: "Consulta de avaliação",
   formSubtitle:
     "Descubra se a rinomodelação é indicada para o seu caso e veja o que é possível alcançar para o seu perfil.",
-  formCta: "Quero minha avaliação",
+  formCta: "Quero agendar",
   formFields,
   formFootnote:
     "Seus dados são tratados com total confidencialidade. Sem custo e sem compromisso.",
-  offerName: "Avaliação do seu perfil + indicação personalizada",
-  urgency: "Agenda de avaliações limitada este mês",
+  offerName: "Mapeamento do seu perfil + indicação personalizada",
+  urgency: "Agenda de consultas limitada este mês",
   proof: PROOF,
   mechanism: INSTITUTO_MECHANISM,
   compare: {
@@ -296,6 +302,12 @@ const rinomodelacao: Procedure = {
   galleryTitle: "Antes & depois",
   gallerySub: "Perfis harmonizados sem cirurgia no Instituto Areluna.",
   galleryCaptions: ["Correção de dorso", "Projeção da ponta", "Perfil harmonioso"],
+  galleryImages: [
+    "/img/cases/rinomodelacao/correcao-do-dorso.png",
+    "/img/cases/rinomodelacao/projecao-da-ponta.png",
+    "/img/cases/rinomodelacao/perfil-harmonioso.png",
+  ],
+  gallerySplit: ["v", "h", "v"],
 
   proTitle: "Quem realiza o seu procedimento",
   proIntro:
@@ -346,7 +358,7 @@ const rinomodelacao: Procedure = {
 
   finalTitle: "Um detalhe em equilíbrio muda o rosto inteiro.",
   finalSub: "Agende a sua avaliação de rinomodelação e descubra o que é possível para o seu perfil.",
-  finalCta: "Quero minha avaliação",
+  finalCta: "Quero agendar",
   ...baseContact,
 };
 
@@ -372,10 +384,10 @@ const bioestimulador: Procedure = {
     "Padrão europeu",
   ],
 
-  formTitle: "Avaliação de pele",
+  formTitle: "Consulta de avaliação da sua pele",
   formSubtitle:
     "Descubra como o bioestimulador pode atuar no seu caso e receba um plano personalizado para a sua pele.",
-  formCta: "Quero minha avaliação",
+  formCta: "Quero minha consulta",
   formFields,
   formFootnote:
     "Seus dados são tratados com total confidencialidade. Sem custo e sem compromisso.",
@@ -442,8 +454,14 @@ const bioestimulador: Procedure = {
     },
   ],
 
-  galleryTitle: "Resultados que repousam",
+  galleryTitle: "Resultados naturais",
   gallerySub: "Qualidade de pele recuperada de forma natural no Instituto Areluna.",
+  galleryImages: [
+    "/img/cases/bioestimulador/mais-firmeza.jpg",
+    "/img/cases/bioestimulador/vico-e-qualidade.png",
+    "/img/cases/bioestimulador/pele-renovada.jpg",
+  ],
+  gallerySplit: ["h", "h", "h"],
   galleryCaptions: ["Mais firmeza", "Viço e qualidade", "Pele renovada"],
 
   proTitle: "Quem cuida da sua pele",
@@ -495,7 +513,7 @@ const bioestimulador: Procedure = {
 
   finalTitle: "A beleza mais sofisticada é a que ninguém percebe.",
   finalSub: "Agende a sua avaliação e descubra como o bioestimulador pode renovar a sua pele.",
-  finalCta: "Quero minha avaliação",
+  finalCta: "Quero minha consulta",
   ...baseContact,
 };
 
@@ -513,7 +531,7 @@ const botox: Procedure = {
   h1Lead: "Suavize o tempo,",
   h1Accent: "mantenha a sua expressão",
   heroSub:
-    "Toxina botulínica aplicada com critério para suavizar linhas de expressão sem congelar o rosto. Você continua sendo você — apenas mais descansada.",
+    "Toxina botulínica aplicada com critério para suavizar linhas de expressão sem congelar o rosto. Você continua sendo você — apenas mais descansado.",
   heroChips: [
     "Expressão preservada",
     "Aplicação criteriosa",
@@ -521,21 +539,21 @@ const botox: Procedure = {
     "Padrão europeu",
   ],
 
-  formTitle: "Avaliação personalizada",
+  formTitle: "Consulta personalizada",
   formSubtitle:
     "Uma indicação pensada para o seu rosto, com aplicação na medida certa para a sua musculatura.",
-  formCta: "Quero minha avaliação",
+  formCta: "Quero minha consulta",
   formFields,
   formFootnote:
     "Seus dados são tratados com total confidencialidade. Sem custo e sem compromisso.",
-  offerName: "Avaliação facial + plano de aplicação individualizado",
-  urgency: "Agenda de avaliações limitada este mês",
+  offerName: "Mapeamento + plano de aplicação individualizado",
+  urgency: "Agenda de consultas limitada este mês",
   proof: PROOF,
   mechanism: INSTITUTO_MECHANISM,
 
   stats: [
     { value: "Natural", label: "Resultado" },
-    { value: "RELFYDESS", label: "Longa duração" },
+    { value: "DYSPORT", label: "Longa duração" },
     { value: "450+", label: "Avaliações 5★" },
     { value: "BR + PT", label: "Dupla titulação" },
   ],
@@ -566,7 +584,7 @@ const botox: Procedure = {
       body: "Avaliamos a toxina dentro de um plano maior de harmonia facial, para resultados coerentes.",
     },
     {
-      title: "Opção de longa duração (RELFYDESS)",
+      title: "Opção de longa duração (DYSPORT)",
       body: "Para quem quer menos manutenção, oferecemos a toxina de longa duração — mesmo resultado natural, com efeito mais prolongado. Avaliamos se é indicada para você.",
     },
   ],
@@ -594,13 +612,20 @@ const botox: Procedure = {
   galleryTitle: "Resultados naturais",
   gallerySub: "Rostos descansados — nunca congelados — no Instituto Areluna.",
   galleryCaptions: ["Linhas da testa", "Região dos olhos", "Olhar descansado"],
+  galleryImages: [
+    "/img/cases/toxina/linhas-da-testa.png",
+    "/img/cases/toxina/regiao-dos-olhos.jpg",
+    "/img/cases/toxina/olhar-descansado.png",
+  ],
+  gallerySplit: ["v", "h", "v"],
 
   proTitle: "Quem realiza a sua aplicação",
   proIntro:
     "Profissionais habilitados, com formação internacional e o critério que diferencia um resultado natural.",
   professionals: [PROS.arethuza, PROS.aline, PROS.leonardo, PROS.sara],
 
-  testimonialsTitle: "O que dizem as nossas pacientes",
+  testimonialsTitle: "O que dizem os nossos pacientes",
+  testimonialsCta: "Quero agendar minha consulta",
   testimonials: [
     {
       name: "Renata C.",
@@ -637,7 +662,7 @@ const botox: Procedure = {
       a: "Quando aplicada por profissional habilitado, com produto e técnica adequados, é um procedimento seguro. A sua segurança é a nossa prioridade.",
     },
     {
-      q: "O que é a toxina de longa duração (RELFYDESS)?",
+      q: "O que é a toxina de longa duração (DYSPORT)?",
       a: "É uma toxina botulínica de efeito mais prolongado, indicada para quem deseja menos manutenção sem abrir mão do resultado natural. Na avaliação verificamos se é a melhor opção para o seu caso.",
     },
     {
@@ -648,7 +673,7 @@ const botox: Procedure = {
 
   finalTitle: "Descanse a expressão. Sem abrir mão de ser você.",
   finalSub: "Agende a sua avaliação e veja como a toxina, bem aplicada, pode renovar o seu olhar.",
-  finalCta: "Quero minha avaliação",
+  finalCta: "Quero minha consulta",
   ...baseContact,
 };
 
