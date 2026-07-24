@@ -9,7 +9,9 @@ export default function Professionals({ p }: { p: Procedure }) {
         <Reveal className="max-w-2xl">
           <div className="mb-5 flex items-center gap-3">
             <span className="h-px w-8 bg-gold-deep/60" />
-            <span className="eyebrow !text-gold-deep">A Equipa</span>
+            <span className="eyebrow !text-gold-deep">
+              {p.unit === "br" ? "A Equipe" : "A Equipa"}
+            </span>
           </div>
           <h2 className="display text-4xl text-jet md:text-5xl">{p.proTitle}</h2>
           <p className="mt-6 text-base leading-relaxed text-jet/65">{p.proIntro}</p>

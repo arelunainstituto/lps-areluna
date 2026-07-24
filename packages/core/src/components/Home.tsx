@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Procedure } from "../data/types";
+import type { Procedure, Unit } from "../data/types";
 import { Arrow } from "./icons";
 
 // Índice de landing pages de UMA unidade (país). Cada site (PT/BR)
@@ -8,9 +8,11 @@ import { Arrow } from "./icons";
 export default function Home({
   procedures,
   unitLabel,
+  unit,
 }: {
   procedures: Procedure[];
   unitLabel: string;
+  unit: Unit;
 }) {
   return (
     <main className="relative min-h-screen overflow-hidden bg-jet pb-24">
@@ -37,8 +39,9 @@ export default function Home({
           Agende a sua <span className="text-gold-grad italic">avaliação</span>
         </h1>
         <p className="mx-auto mt-5 max-w-xl text-sand/60">
-          Escolha o tratamento e fale com a nossa equipa. Cada página tem o
-          formulário de contacto para agendar sem compromisso.
+          {unit === "br"
+            ? "Escolha o tratamento e fale com a nossa equipe. Cada página tem o formulário de contato para agendar sem compromisso."
+            : "Escolha o tratamento e fale com a nossa equipa. Cada página tem o formulário de contacto para agendar sem compromisso."}
         </p>
       </div>
 

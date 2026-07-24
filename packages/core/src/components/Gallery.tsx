@@ -5,6 +5,10 @@ import Reveal from "./Reveal";
 const labelBase =
   "pointer-events-none absolute z-10 text-[0.62rem] uppercase tracking-[0.2em]";
 
+// Chip de fundo para legibilidade dos rótulos sobre as fotos.
+const chip = "rounded p-1 leading-none";
+const chipBg = { backgroundColor: "hsl(0deg 0% 15.99% / 50%)" } as const;
+
 /**
  * Rótulo antes/depois sobreposto ao card.
  * "v" → divisória vertical, ANTES à esquerda / DEPOIS à direita.
@@ -15,8 +19,12 @@ function AntesDepois({ split }: { split: "v" | "h" }) {
     return (
       <>
         <div className="pointer-events-none absolute inset-x-0 top-1/2 z-10 h-px w-full -translate-y-1/2 bg-gold-leaf/40" />
-        <span className={`${labelBase} left-4 top-3 text-sand/80`}>Antes</span>
-        <span className={`${labelBase} left-4 top-1/2 mt-2 text-gold-leaf`}>Depois</span>
+        <span style={chipBg} className={`${labelBase} left-4 top-3 ${chip} text-sand/90`}>
+          Antes
+        </span>
+        <span style={chipBg} className={`${labelBase} left-4 top-1/2 mt-2 ${chip} text-gold-pale`}>
+          Depois
+        </span>
       </>
     );
   }
@@ -24,8 +32,12 @@ function AntesDepois({ split }: { split: "v" | "h" }) {
     <>
       <div className="pointer-events-none absolute left-1/2 top-0 z-10 h-full w-px -translate-x-1/2 bg-gold-leaf/30" />
       <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex justify-between px-4 py-3 text-[0.62rem] uppercase tracking-[0.2em]">
-        <span className="text-sand/80">Antes</span>
-        <span className="text-gold-leaf">Depois</span>
+        <span style={chipBg} className={`${chip} text-sand/90`}>
+          Antes
+        </span>
+        <span style={chipBg} className={`${chip} text-gold-pale`}>
+          Depois
+        </span>
       </div>
     </>
   );

@@ -100,8 +100,9 @@ export default function LeadForm({
           </span>
           <p className="font-serif text-2xl text-sand">Pedido recebido.</p>
           <p className="max-w-xs text-sm text-sand/60">
-            A nossa equipa entrará em contacto em breve para agendar a sua
-            avaliação. Obrigado pela confiança.
+            {unit === "br"
+              ? "A nossa equipe entrará em contato em breve para agendar a sua avaliação. Obrigado pela confiança."
+              : "A nossa equipa entrará em contacto em breve para agendar a sua avaliação. Obrigado pela confiança."}
           </p>
         </div>
       ) : (
@@ -147,14 +148,14 @@ export default function LeadForm({
             disabled={status === "sending"}
             className="btn-gold mt-2 w-full disabled:cursor-not-allowed disabled:opacity-70"
           >
-            {status === "sending" ? "A enviar…" : cta}
+            {status === "sending" ? (unit === "br" ? "Enviando…" : "A enviar…") : cta}
           </button>
           {status === "error" && (
             <p className="mt-1 text-center text-[0.72rem] leading-relaxed text-red-300/90">
               Não foi possível enviar o seu pedido. Tente novamente
               {whatsappHref ? (
                 <>
-                  {" "}ou fale connosco no{" "}
+                  {" "}ou fale {unit === "br" ? "conosco" : "connosco"} no{" "}
                   <a
                     href={whatsappHref}
                     target="_blank"
