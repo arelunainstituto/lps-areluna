@@ -143,7 +143,7 @@ const harmonizacao: Procedure = {
   proTitle: "Quem cuida do seu rosto",
   proIntro:
     "Conduzida pela Dra. Arethuza Luna, com dupla titulação Brasil e Portugal, a nossa equipe une formação internacional e olhar artístico.",
-  professionals: [PROS.arethuza, PROS.aline, PROS.leonardo, PROS.sara],
+  professionals: [PROS.arethuza, PROS.camila, PROS.paula],
 
   testimonialsTitle: "O que dizem as nossas pacientes",
   testimonials: [
@@ -312,7 +312,7 @@ const rinomodelacao: Procedure = {
   proTitle: "Quem realiza o seu procedimento",
   proIntro:
     "Profissionais habilitados, com formação internacional e foco na segurança de uma das regiões mais delicadas do rosto.",
-  professionals: [PROS.arethuza, PROS.aline, PROS.leonardo, PROS.sara],
+  professionals: [PROS.arethuza, PROS.camila, PROS.paula],
 
   testimonialsTitle: "Histórias de quem harmonizou o perfil",
   testimonials: [
@@ -467,7 +467,7 @@ const bioestimulador: Procedure = {
   proTitle: "Quem cuida da sua pele",
   proIntro:
     "Equipe com formação internacional e padrão europeu, dedicada à saúde e à longevidade da sua pele.",
-  professionals: [PROS.arethuza, PROS.marcos, PROS.aline, PROS.leonardo],
+  professionals: [PROS.arethuza, PROS.camila, PROS.paula],
 
   testimonialsTitle: "O que dizem as nossas pacientes",
   testimonials: [
@@ -622,7 +622,7 @@ const botox: Procedure = {
   proTitle: "Quem realiza a sua aplicação",
   proIntro:
     "Profissionais habilitados, com formação internacional e o critério que diferencia um resultado natural.",
-  professionals: [PROS.arethuza, PROS.aline, PROS.leonardo, PROS.sara],
+  professionals: [PROS.arethuza, PROS.camila, PROS.paula],
 
   testimonialsTitle: "O que dizem os nossos pacientes",
   testimonialsCta: "Quero agendar minha consulta",

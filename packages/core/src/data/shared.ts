@@ -46,6 +46,21 @@ export const PROS: Record<string, Professional> = {
       "Mestrados em Miami e Nova Iorque. Dupla titulação Brasil e Portugal. Referência em harmonização orofacial de resultado natural.",
     photo: "/img/team/arethuza.jpg",
   },
+  // Equipe Brasil (Curitiba) — fotos em apps/br/public/img/team.
+  camila: {
+    name: "Dra. Camila Waidzik",
+    role: "Harmonização Orofacial & Perfiloplastia",
+    credential:
+      "Pós-graduada em Harmonização Orofacial e Estética. Professora e expert em preenchimento labial. Olhar individualizado para resultados naturais.",
+    photo: "/img/team/camila.png",
+  },
+  paula: {
+    name: "Dra. Paula Algomes",
+    role: "Estética Avançada & Procedimentos Corporais",
+    credential:
+      "Biomédica esteta com mais de 15 anos na área da beleza. Olhar apurado para proporção, com técnica segura em face e corpo.",
+    photo: "/img/team/paula.png",
+  },
   leonardo: {
     name: "Dr. Leonardo Saraiva",
     role: "Estomatologia & Patologia Oral",
