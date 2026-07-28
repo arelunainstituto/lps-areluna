@@ -60,7 +60,6 @@ export default function Hero({ p }: { p: Procedure }) {
             unit={p.unit}
             slug={p.slug}
             treatment={p.eyebrow.split("·")[0].trim()}
-            whatsappHref={p.whatsappHref}
           />
         </div>
       </div>

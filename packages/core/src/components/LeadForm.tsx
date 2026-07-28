@@ -5,7 +5,7 @@ import type { LeadField, Unit } from "../data/types";
 import { buildLeadPayload, newExternalId } from "../lib/leads";
 import { Check } from "./icons";
 
-type Status = "idle" | "sending" | "sent" | "error";
+type Status = "idle" | "sending";
 
 export default function LeadForm({
   title,
@@ -18,7 +18,6 @@ export default function LeadForm({
   unit,
   slug,
   treatment,
-  whatsappHref,
   id = "form",
 }: {
   title: string;
@@ -31,7 +30,6 @@ export default function LeadForm({
   unit: Unit;
   slug: string;
   treatment?: string;
-  whatsappHref?: string;
   id?: string;
 }) {
   const [status, setStatus] = useState<Status>("idle");
@@ -56,17 +54,19 @@ export default function LeadForm({
 
     setStatus("sending");
     try {
-      const res = await fetch("/api/lead", {
+      // keepalive garante o envio mesmo com a navegação logo a seguir.
+      await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
         keepalive: true,
       });
-      if (!res.ok) throw new Error("bad_status");
-      setStatus("sent");
     } catch {
-      setStatus("error");
+      // Não bloqueia: o keepalive despacha o pedido e a conversão tem
+      // prioridade — seguimos para a página de obrigado de qualquer forma.
     }
+    // Redireciona para a página de obrigado (registo de conversão).
+    window.location.href = "/obrigado";
   }
 
   return (
@@ -93,20 +93,7 @@ export default function LeadForm({
         )}
       </div>
 
-      {status === "sent" ? (
-        <div className="flex flex-col items-center gap-3 py-10 text-center">
-          <span className="flex h-12 w-12 items-center justify-center rounded-full border border-gold-leaf/50 text-gold-leaf">
-            <Check className="h-6 w-6" />
-          </span>
-          <p className="font-serif text-2xl text-sand">Pedido recebido.</p>
-          <p className="max-w-xs text-sm text-sand/60">
-            {unit === "br"
-              ? "A nossa equipe entrará em contato em breve para agendar a sua avaliação. Obrigado pela confiança."
-              : "A nossa equipa entrará em contacto em breve para agendar a sua avaliação. Obrigado pela confiança."}
-          </p>
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
           {fields.map((f) => (
             <div key={f.name} className="flex flex-col gap-1.5">
               <label
@@ -150,32 +137,10 @@ export default function LeadForm({
           >
             {status === "sending" ? (unit === "br" ? "Enviando…" : "A enviar…") : cta}
           </button>
-          {status === "error" && (
-            <p className="mt-1 text-center text-[0.72rem] leading-relaxed text-red-300/90">
-              Não foi possível enviar o seu pedido. Tente novamente
-              {whatsappHref ? (
-                <>
-                  {" "}ou fale {unit === "br" ? "conosco" : "connosco"} no{" "}
-                  <a
-                    href={whatsappHref}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="underline decoration-gold-leaf/60 underline-offset-2 hover:text-gold-pale"
-                  >
-                    WhatsApp
-                  </a>
-                  .
-                </>
-              ) : (
-                "."
-              )}
-            </p>
-          )}
           <p className="mt-1 text-center text-[0.68rem] leading-relaxed text-sand/35">
             {footnote}
           </p>
         </form>
-      )}
     </div>
   );
 }

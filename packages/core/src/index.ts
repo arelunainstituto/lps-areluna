@@ -5,7 +5,9 @@
 
 export { default as LandingPage } from "./components/LandingPage";
 export { default as Home } from "./components/Home";
+export { default as Obrigado } from "./components/Obrigado";
 export { GoogleTagManager } from "./components/GoogleTagManager";
+export { ConversionScripts } from "./components/ConversionScripts";
 
 export type * from "./data/types";
 export { UNIT_LABEL } from "./data/units";
